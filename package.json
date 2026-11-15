@@ -1,0 +1,102 @@
+{
+  "name": "rtlia",
+  "displayName": "Rtlia",
+  "description": "Right-to-left Markdown preview for Persian, Arabic, Hebrew, and other RTL languages. Code blocks stay left to right.",
+  "version": "0.1.0",
+  "publisher": "rtlia",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliashahi/rtlia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aliashahi/rtlia/issues"
+  },
+  "homepage": "https://github.com/aliashahi/rtlia#readme",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "rtl",
+    "persian",
+    "arabic",
+    "hebrew",
+    "preview",
+    "rtlia"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/src/extension.js",
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "markdown.previewStyles": [
+      "./media/preview.css"
+    ],
+    "commands": [
+      {
+        "command": "rtlia.openPreview",
+        "title": "Open RTL Preview to the Side",
+        "category": "Rtlia",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "rtlia.setDirection",
+        "title": "Set Preview Direction",
+        "category": "Rtlia"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "rtlia.openPreview",
+          "when": "editorLangId == markdown",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "rtlia.openPreview",
+          "when": "editorLangId == markdown",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Rtlia",
+      "properties": {
+        "rtlia.direction": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "rtl",
+            "ltr"
+          ],
+          "enumDescriptions": [
+            "Use right-to-left when the document has at least as many RTL letters as Latin letters, ignoring code.",
+            "Always render the Markdown preview right to left. Code stays left to right.",
+            "Always render the Markdown preview left to right."
+          ],
+          "default": "auto",
+          "description": "Direction of the Markdown preview. A document can override this with front matter: direction: rtl or direction: ltr."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test out/test/direction.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.8.0"
+  }
+}

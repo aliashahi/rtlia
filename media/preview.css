@@ -1,0 +1,103 @@
+.rtlia-root[dir="rtl"] {
+  direction: rtl;
+  text-align: start;
+  font-family: var(
+    --markdown-font-family,
+    "Vazirmatn",
+    "Vazir",
+    "Sahel",
+    "IRANSansX",
+    "IRANSans",
+    "Noto Naskh Arabic",
+    "Noto Sans Arabic",
+    "Droid Arabic Naskh",
+    "Segoe UI",
+    "Tahoma",
+    sans-serif
+  );
+}
+
+.rtlia-root[dir="rtl"] :where(
+  p, h1, h2, h3, h4, h5, h6,
+  ul, ol, li, blockquote,
+  table, thead, tbody, tfoot, tr, th, td,
+  dl, dt, dd, figure, figcaption
+) {
+  direction: rtl;
+  text-align: start;
+}
+
+.rtlia-root[dir="rtl"] ul,
+.rtlia-root[dir="rtl"] ol {
+  padding-left: 0;
+  padding-right: 2em;
+}
+
+.rtlia-root[dir="rtl"] blockquote {
+  margin: 0;
+  border-left: 0;
+  border-right: 5px solid var(--vscode-textBlockQuote-border, rgba(128, 128, 128, 0.45));
+  padding: 0 10px 0 16px;
+}
+
+.rtlia-root[dir="rtl"] th,
+.rtlia-root[dir="rtl"] td {
+  text-align: start;
+}
+
+.rtlia-root[dir="rtl"] pre,
+.rtlia-root[dir="rtl"] pre *,
+.rtlia-root[dir="rtl"] :not(pre) > code,
+.rtlia-root[dir="rtl"] kbd,
+.rtlia-root[dir="rtl"] samp {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+
+.rtlia-root[dir="rtl"] table.frontmatter,
+.rtlia-root[dir="rtl"] table.frontmatter th,
+.rtlia-root[dir="rtl"] table.frontmatter td,
+.rtlia-root[dir="rtl"] pre.frontmatter,
+.rtlia-root[dir="rtl"] .frontmatter-error {
+  direction: ltr;
+  text-align: left;
+}
+
+body.showEditorSelection .rtlia-root[dir="rtl"] :not(tr, ul, ol).code-active-line:before,
+body.showEditorSelection .rtlia-root[dir="rtl"] :not(tr, ul, ol).code-line:hover:before {
+  left: auto;
+  right: -12px;
+  border-left-width: 0;
+}
+
+body.showEditorSelection .rtlia-root[dir="rtl"] li.code-active-line:before,
+body.showEditorSelection .rtlia-root[dir="rtl"] li.code-line:hover:before {
+  left: auto;
+  right: -30px;
+  border-left-width: 0;
+}
+
+body.vscode-light.showEditorSelection .rtlia-root[dir="rtl"] .code-active-line:before {
+  border-right: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+body.vscode-light.showEditorSelection .rtlia-root[dir="rtl"] .code-line:hover:before {
+  border-right: 3px solid rgba(0, 0, 0, 0.4);
+}
+
+body.vscode-dark.showEditorSelection .rtlia-root[dir="rtl"] .code-active-line:before {
+  border-right: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+body.vscode-dark.showEditorSelection .rtlia-root[dir="rtl"] .code-line:hover:before {
+  border-right: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+body.vscode-high-contrast.showEditorSelection .rtlia-root[dir="rtl"] .code-active-line:before {
+  border-right: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+body.vscode-high-contrast.showEditorSelection .rtlia-root[dir="rtl"] .code-line:hover:before {
+  border-right: 3px solid rgba(255, 160, 0, 1);
+}
