@@ -3,7 +3,7 @@
   "displayName": "Rtlia",
   "description": "Right-to-left Markdown preview for Persian, Arabic, Hebrew, and other RTL languages. Code blocks stay left to right.",
   "version": "0.1.0",
-  "publisher": "rtlia",
+  "publisher": "aliashahi",
   "icon": "icon.png",
   "repository": {
     "type": "git",

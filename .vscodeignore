@@ -4,5 +4,6 @@ test/**
 out/test/**
 out/**/*.map
 tsconfig.json
+*.vsix
 .gitignore
 **/*.ts
